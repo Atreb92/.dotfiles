@@ -14,32 +14,52 @@ general {
     interval = 5
     markup = pango
     interval = 1
+    output_format = "i3bar"
+    colors = true
+    color_good = "#C1E1C1"
+    color_degraded = "#FDDA76"
+    color_bad = "#FF6961"
 }
 
 order += "ethernet tun0"
-order += "ethernet eth0"
+order += "ethernet ens160"
 order += "disk /"
 order += "memory"
+order += "load"
+#order += "tztime local"
 
 ethernet tun0 {
     format_up = "<span background='#91c483' color='#1c1c1c'> VPN: %ip </span>"
     format_down = "<span background='#ff6464' color='#1c1c1c'> VPN Off </span>"
 }
-ethernet eth0 {
-    format_up = "<span background='#91c483' color='#1c1c1c'> E: %ip </span>"
-    format_down = "<span background='#ff6464 color='#1c1c1c'> E: down </span>"
+ethernet ens160 {
+    format_up = "<span background='#91c483' color='#1c1c1c'> : %ip </span>"
+    format_down = "<span background='#ff6464 color='#1c1c1c'> : down </span>"
 }
 
 #battery all {
 #        format = "%status %percentage %remaining"
 #}
 
+#disk "/" {
+#        format = "Disk: %avail"
+#}
+
 disk "/" {
-        format = "Disk: %avail"
+        format = "<span background='#fec7cd'>  %free Free </span>"
 }
 
 memory {
         format = "Used: %used | Available: %available"
         threshold_degraded = "1G"
         format_degraded = "MEMORY < %available"
+}
+
+load {
+        format = "<span background='#f59335'>  %5min Load </span>"
+}
+
+tztime local {
+		format = "<span background='#81a1c1'> %time </span>"
+		format_time = " %a %-d %b %H:%M"
 }

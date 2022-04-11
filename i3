@@ -47,7 +47,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run
+#bindsym $mod+d exec --no-startup-id dmenu_run
 #bindsym $mod+d exec rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3 -font 'Noto Sans 10'
 
 # A more modern dmenu replacement is rofi:
@@ -180,10 +180,32 @@ bindsym $mod+shift+s exec --no-startup-id "flameshot gui"
 bindsym $mod+shift+d exec --no-startup-id "flameshot screen -c"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        status_command i3status
-}
-
-
 exec --no-startup-id /bin/bash ~/.dotfiles/scripts/wallpaper.sh
 exec --no-startup-id /usr/bin/vmware-user-suid-wrapper
+
+# class                 border  bground text    indicator child_border
+client.focused          #1E1C11 #EEEEEE #1E1C11 #2E9EF4   #285577
+client.focused_inactive #1E1C11 #1E1C11 #EEEEEE #484E50   #5F676A
+client.unfocused        #333333 #222222 #888888 #292D2E   #222222
+client.urgent           #1E1C11 #D3250D #EEEEEE #D3250D   #D3250D
+client.placeholder      #000000 #0C0C0C #EEEEEE #000000   #0C0C0C
+
+client.background       #EEEEEE
+
+bar {
+        status_command i3status
+  colors {
+    background #0A0A0A
+    statusline #EEEEEE
+    separator  #666666
+
+    focused_workspace  #1E1C11 #EEEEEE #1E1C11
+    active_workspace   #333333 #222222 #EEEEEE
+    inactive_workspace #333333 #222222 #888888
+    urgent_workspace   #1E1C11 #D3250D #EEEEEE
+    binding_mode       #1E1C11 #D3250D #EEEEEE
+  }
+}
+
+bindsym $mod+d exec --no-startup-id "dmenu_run -nf '#EEEEEE' -nb '#1E1C11' -sb '#EEEEEE' -sf '#1E1C11' -fn 'monospace-10'"
+
