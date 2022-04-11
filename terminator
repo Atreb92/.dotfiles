@@ -1,0 +1,20 @@
+[global_config]
+  title_transmit_bg_color = "#57e389"
+  enabled_plugins = LaunchpadBugURLHandler, LaunchpadCodeURLHandler, APTURLHandler, Logger
+[keybindings]
+[profiles]
+  [[default]]
+    background_color = "#0f0f0f"
+    background_darkness = 0.9
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    foreground_color = "#f6f5f4"
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+[plugins]
