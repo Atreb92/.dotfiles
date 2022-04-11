@@ -184,5 +184,6 @@ bar {
         status_command i3status
 }
 
-exec --no-startup-id /bin/bash /home/kali/.fehbg
+
+exec --no-startup-id /bin/bash ~/.dotfiles/scripts/wallpaper.sh
 exec --no-startup-id /usr/bin/vmware-user-suid-wrapper

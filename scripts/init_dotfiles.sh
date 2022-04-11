@@ -25,3 +25,7 @@ ln -sf ~/.dotfiles/p10k.zsh ~/.p10k.zsh
 
 # bash
 ln -sf ~/.dotfiles/bashrc ~/.bashrc
+
+# kitty
+mkdir -p ~/.config/kitty
+ln -sf ~/.dotfiles/kitty ~/.config/kitty/kitty.conf
