@@ -23,9 +23,9 @@ general {
 
 order += "ethernet tun0"
 order += "ethernet ens160"
-order += "disk /"
+#order += "disk /"
 order += "memory"
-order += "load"
+#order += "load"
 #order += "tztime local"
 
 ethernet tun0 {
@@ -56,7 +56,7 @@ memory {
 }
 
 load {
-        format = "<span background='#f59335'>  %5min Load </span>"
+        format = "<span background='#f59335'><i class='feather airplay.icon-airplay'></i> %5min Load </span>"
 }
 
 tztime local {
