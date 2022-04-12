@@ -22,17 +22,17 @@ general {
 }
 
 order += "ethernet tun0"
-order += "ethernet ens160"
+order += "ethernet eth0"
 #order += "disk /"
 order += "memory"
 #order += "load"
 #order += "tztime local"
 
 ethernet tun0 {
-    format_up = "<span background='#91c483' color='#1c1c1c'> VPN: %ip </span>"
-    format_down = "<span background='#ff6464' color='#1c1c1c'> VPN Off </span>"
+    format_up = "<span background='#91c483' color='#1c1c1c'> : %ip </span>"
+    format_down = "<span background='#ff6464' color='#1c1c1c'> : Off </span>"
 }
-ethernet ens160 {
+ethernet eth0 {
     format_up = "<span background='#91c483' color='#1c1c1c'> : %ip </span>"
     format_down = "<span background='#ff6464 color='#1c1c1c'> : down </span>"
 }
@@ -50,7 +50,7 @@ disk "/" {
 }
 
 memory {
-        format = "Used: %used | Available: %available"
+        format = "<span background='#c1e1c1' color='#1c1c1c'>  RAM: %available </span>"
         threshold_degraded = "1G"
         format_degraded = "MEMORY < %available"
 }
