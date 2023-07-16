@@ -9,11 +9,13 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod4
+set $mod Mod4 
+#set $mod Mod1 # Alt Key
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+#font pango:BigBlueTerm437 Nerd Font Mono 10 
+font pango:CaskaydiaCove Nerd Font,CaskaydiaCove NF 13
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -41,7 +43,8 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+#bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -57,24 +60,12 @@ bindsym $mod+Shift+q kill
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+ograve focus right
-
-# alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+ograve move right
-
-# alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
@@ -84,7 +75,7 @@ bindsym $mod+Shift+Right move right
 bindsym $mod+h split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+#bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -148,7 +139,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -181,31 +172,65 @@ bindsym $mod+shift+d exec --no-startup-id "flameshot screen -c"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 exec --no-startup-id /bin/bash ~/.dotfiles/scripts/wallpaper.sh
-exec --no-startup-id /usr/bin/vmware-user-suid-wrapper
+#exec --no-startup-id /usr/bin/vmware-user-suid-wrapper
 
 # class                 border  bground text    indicator child_border
-client.focused          #1E1C11 #EEEEEE #1E1C11 #2E9EF4   #285577
-client.focused_inactive #1E1C11 #1E1C11 #EEEEEE #484E50   #5F676A
-client.unfocused        #333333 #222222 #888888 #292D2E   #222222
-client.urgent           #1E1C11 #D3250D #EEEEEE #D3250D   #D3250D
-client.placeholder      #000000 #0C0C0C #EEEEEE #000000   #0C0C0C
+#client.focused          #1E1C11 #EEEEEE #1E1C11 #2E9EF4   #285577
+#client.focused_inactive #1E1C11 #1E1C11 #EEEEEE #484E50   #5F676A
+#client.unfocused        #333333 #222222 #888888 #292D2E   #222222
+#client.urgent           #1E1C11 #D3250D #EEEEEE #D3250D   #D3250D
+#client.placeholder      #000000 #0C0C0C #EEEEEE #000000   #0C0C0C
+#
+#client.background       #EEEEEE
+#
+#bar {
+#        status_command i3status
+#  colors {
+#    background #0A0A0A
+#    statusline #EEEEEE
+#    separator  #666666
+#
+#    focused_workspace  #1E1C11 #EEEEEE #1E1C11
+#    active_workspace   #333333 #222222 #EEEEEE
+#    inactive_workspace #333333 #222222 #888888
+#    urgent_workspace   #1E1C11 #D3250D #EEEEEE
+#    binding_mode       #1E1C11 #D3250D #EEEEEE
+#  }
+#}
 
-client.background       #EEEEEE
+# class                 border  bground text    indicator child_border
+client.focused          #61AFEF #61AFEF #282C34 #282C34   #282C34
+client.focused_inactive #282C34 #ABB2BF #282C34 #282C34   #282C34
+client.unfocused        #282C34 #ABB2BF #282C34 #282C34   #282C34
+client.urgent           #282C34 #E06C75 #282C34 #282C34   #282C34
+client.placeholder      #282C34 #1E2127 #EEEEEE #282C34   #282C34
+
+client.background       #FFFFFF
 
 bar {
-        status_command i3status
+	status_command i3status
+	height 30
   colors {
-    background #0A0A0A
+    background #282C34
     statusline #EEEEEE
-    separator  #666666
+    separator  #EEEEEE
 
-    focused_workspace  #1E1C11 #EEEEEE #1E1C11
-    active_workspace   #333333 #222222 #EEEEEE
-    inactive_workspace #333333 #222222 #888888
-    urgent_workspace   #1E1C11 #D3250D #EEEEEE
-    binding_mode       #1E1C11 #D3250D #EEEEEE
+    focused_workspace  #61AFEF #61AFEF #282C34
+    active_workspace   #282C34 #ABB2BF #EEEEEE
+    inactive_workspace #282C34 #ABB2BF #282C34
+    urgent_workspace   #282C34 #E06C75 #282C34
+    binding_mode       #282C34 #E06C75 #282C34
   }
 }
 
-bindsym $mod+d exec --no-startup-id "dmenu_run -nf '#EEEEEE' -nb '#1E1C11' -sb '#EEEEEE' -sf '#1E1C11' -fn 'monospace-10'"
+#bindsym $mod+d exec --no-startup-id "dmenu_run -nf '#EEEEEE' -nb '#1E1C11' -sb '#EEEEEE' -sf '#1E1C11' -fn 'monospace-10'"
+bindsym $mod+d exec --no-startup-id ~/.dotfiles/rofi/launchers/type-1/launcher.sh
+bindsym $mod+Shift+e exec --no-startup-id ~/.dotfiles/rofi/powermenu/type-1/powermenu.sh
 
+# i3 Gaps config
+default_border pixel 0
+gaps inner 10
+smart_gaps on
+
+# Alternating layout on i3
+exec --no-startup-id /home/kali/.dotfiles/scripts/alternating_layouts.py

@@ -16,9 +16,9 @@ general {
     interval = 1
     output_format = "i3bar"
     colors = true
-    color_good = "#C1E1C1"
-    color_degraded = "#FDDA76"
-    color_bad = "#FF6961"
+    color_good = "#98C379"
+    color_degraded = "#E5C07B"
+    color_bad = "#E06C75"
 }
 
 order += "ethernet tun0"
@@ -26,15 +26,15 @@ order += "ethernet eth0"
 #order += "disk /"
 order += "memory"
 #order += "load"
-#order += "tztime local"
+order += "tztime local"
 
 ethernet tun0 {
-    format_up = "<span background='#91c483' color='#1c1c1c'> : %ip </span>"
-    format_down = "<span background='#ff6464' color='#1c1c1c'> : Off </span>"
+    format_up = "<span background='#98C379' color='#282C34'> 󰌾: %ip </span>"
+    format_down = "<span background='#E06C75' color='#282C34'> 󰿆: Off </span>"
 }
 ethernet eth0 {
-    format_up = "<span background='#91c483' color='#1c1c1c'> : %ip </span>"
-    format_down = "<span background='#ff6464 color='#1c1c1c'> : down </span>"
+    format_up = "<span background='#98C379' color='#282C34'> 󰈀: %ip </span>"
+    format_down = "<span background='#E06C75 color='#282C34'> 󰈀: down </span>"
 }
 
 #battery all {
@@ -46,20 +46,20 @@ ethernet eth0 {
 #}
 
 disk "/" {
-        format = "<span background='#fec7cd'>  %free Free </span>"
+        format = "<span background='#fec7cd'> 󰋊 %free Free </span>"
 }
 
 memory {
-        format = "<span background='#c1e1c1' color='#1c1c1c'>  RAM: %available </span>"
-        threshold_degraded = "1G"
-        format_degraded = "MEMORY < %available"
+        format = "<span background='#98C379' color='#282C34'> 󰍛 RAM: %available </span>"
+        #threshold_degraded = "1G"
+        #format_degraded = "MEMORY < %available"
 }
 
 load {
-        format = "<span background='#f59335'><i class='feather airplay.icon-airplay'></i> %5min Load </span>"
+        format = "<span background='#f59335'><i class='feather airplay.icon-airplay'></i>󰍛 %5min Load </span>"
 }
 
 tztime local {
-		format = "<span background='#81a1c1'> %time </span>"
-		format_time = " %a %-d %b %H:%M"
+		format = "<span background='#282C34'> %time </span>"
+		format = " %a %-d %b %H:%M"
 }

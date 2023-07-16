@@ -8,7 +8,7 @@
 # bold_font Operator Mono Thick
 # bold_italic_font Operator Mono Medium
 # font_family      Input Mono
-font_family      Fantasque Sans Mono
+font_family      CaskaydiaCove Nerd Font Mono,CaskaydiaCove NFM
 italic_font      auto
 bold_font        auto
 bold_italic_font auto
@@ -17,19 +17,49 @@ bold_italic_font auto
 font_size        12.0
 
 # The foreground color
-foreground       #c0b18b
+#foreground       #ffffff
 
 # The background color
-background       #262626
+#background       #282C34
 
 # The foreground for selections
 selection_foreground #2f2f2f
 
 # The background for selections
-selection_background #d75f5f
+selection_background #C678DD
 
 # The cursor color
-cursor           #8fee96
+cursor            #ffffff
+
+# Colors
+
+foreground #ffffff
+background #282c34
+
+color0 #282c34
+color1 #e06c75
+color2 #98c379
+color3 #e5c07b
+color4 #61afef
+color5 #be5046
+color6 #56b6c2
+color7 #979eab
+color8 #ABB2BF
+color9 #d19a66
+color10 #56b6c2
+color11 #e5c07b
+color12 #61afef
+color13 #be5046
+color14 #56b6c2
+color15 #abb2bf
+
+# Tab Bar
+
+active_tab_foreground   #282c34
+active_tab_background   #61afef
+inactive_tab_foreground #282c34
+inactive_tab_background #979eab
+
 
 # The cursor shape can be one of (block, beam, underline)
 cursor_shape     block
@@ -68,7 +98,7 @@ mouse_hide_wait 0.0
 # The enabled window layouts. A comma separated list of layout names. The special value * means
 # all layouts. The first listed layout will be used as the startup layout.
 # For a list of available layouts, see the file layouts.py
-enabled_layouts *
+enabled_layouts tall:bias=50;full_size=1;mirrored=false,grid,horizontal,vertical,stack
 
 # If enabled, the window size will be remembered so that new instances of kitty will have the same
 # size as the previous instance. If disabled, the window will initially have size configured
@@ -98,7 +128,7 @@ visual_bell_duration 0.0
 enable_audio_bell yes
 
 # The modifier keys to press when clicking with the mouse on URLs to open the URL
-open_url_modifiers ctrl+shift
+open_url_modifiers ctrl
 
 # The program with which to open URLs that are clicked on. The special value "default" means to
 # use the operating system's default URL handler.
@@ -119,46 +149,46 @@ active_border_color #ffffff
 inactive_border_color #cccccc
 
 # Tab-bar colors
-active_tab_foreground #000
-active_tab_background #eee
-inactive_tab_foreground #444
-inactive_tab_background #999
+#active_tab_foreground #000
+#active_tab_background #eee
+#inactive_tab_foreground #444
+#inactive_tab_background #999
 
 
 # The 16 terminal colors. There are 8 basic colors, each color has a dull and
 # bright version.
 
 # black
-color0   #2f2f2f
-color8   #656565
+#color0   #2f2f2f
+#color8   #656565
 
 # red
-color1   #d75f5f
-color9   #d75f5f
+#color1   #d75f5f
+#color9   #d75f5f
 
 # green
-color2    #d4d232
-color10   #8fee96
+#color2    #d4d232
+#color10   #8fee96
 
 # yellow
-color3    #af865a
-color11   #cd950c
+#color3    #af865a
+#color11   #cd950c
 
 # blue
-color4   #22c3a1
-color12  #22c3a1
+#color4   #22c3a1
+#color12  #22c3a1
 
 # magenta
-color5   #775759
-color13  #775759
+#color5   #775759
+#color13  #775759
 
 # cyan
-color6   #84edb9
-color14  #84edb9
+#color6   #84edb9
+#color14  #84edb9
 
 # white
-color7   #c0b18b
-color15  #d8d8d8
+#color7   #c0b18b
+#color15  #d8d8d8
 
 # Key mapping
 # For a list of key names, see: http://www.glfw.org/docs/latest/group__keys.html
@@ -175,8 +205,6 @@ map shift+insert        paste_from_selection
 # Scrolling
 map ctrl+shift+up        scroll_line_up
 map ctrl+shift+down      scroll_line_down
-map ctrl+shift+k         scroll_line_up
-map ctrl+shift+j         scroll_line_down
 map ctrl+shift+page_up   scroll_page_up
 map ctrl+shift+page_down scroll_page_down
 map ctrl+shift+home      scroll_home
@@ -187,12 +215,13 @@ map ctrl+shift+h         show_scrollback
 map super+n             new_os_window
 map super+w             close_window
 map ctrl+shift+enter    new_window
-map ctrl+shift+]        next_window
-map ctrl+shift+[        previous_window
+map ctrl+shift+ù        next_window
+map ctrl+shift+à        previous_window
 map ctrl+shift+f        move_window_forward
-map ctrl+shift+b        move_window_backward
-map ctrl+shift+`        move_window_to_top
+map ctrl+shift+d        move_window_backward
+map ctrl+shift+y        move_window_to_top
 map ctrl+shift+1        first_window
+map ctrl+shift+2        second_window
 map ctrl+shift+2        second_window
 map ctrl+shift+3        third_window
 map ctrl+shift+4        fourth_window
@@ -204,19 +233,27 @@ map ctrl+shift+9        ninth_window
 map ctrl+shift+0        tenth_window
 
 # Tab management
-map ctrl+shift+right    next_tab
-map ctrl+shift+left     previous_tab
+map ctrl+tab    		next_tab
+map ctrl+shift+tab   	previous_tab
 map ctrl+shift+t        new_tab
 map ctrl+shift+q        close_tab
-map ctrl+shift+l        next_layout
 map ctrl+shift+.        move_tab_forward
 map ctrl+shift+,        move_tab_backward
 map ctrl+shift+s        set_tab_title
 
+# Layout switching
+map ctrl+shift+l        next_layout
+map ctrl+shift+p 		last_used_layout
+map ctrl+f1				goto_layout tall:bias=50;full_size=1;mirrored=false
+map ctrl+f2				goto_layout grid
+map ctrl+f3				goto_layout vertical
+map ctrl+f4				goto_layout horizontal
+map ctrl+shift+z 		toggle_layout stack
+
 # Miscellaneous
-map ctrl+shift+up      increase_font_size
-map ctrl+shift+down    decrease_font_size
-map ctrl+shift+backspace restore_font_size
+#map ctrl+shift+up      increase_font_size
+#map ctrl+shift+down    decrease_font_size
+#map ctrl+shift+backspace restore_font_size
 
 # Symbol mapping (special font for specified unicode code points). Map the
 # specified unicode codepoints to a particular font. Useful if you need special
@@ -241,3 +278,7 @@ macos_option_as_alt no
 macos_titlebar_color background
 
 allow_remote_control yes
+
+# Disable confirmation for windows closing
+confirm_os_window_close 0
+

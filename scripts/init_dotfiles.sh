@@ -31,5 +31,5 @@ mkdir -p ~/.config/kitty
 ln -sf ~/.dotfiles/kitty ~/.config/kitty/kitty.conf
 
 # Install icomoon font
-mkdir -p ~/.fonts/icomoon
-cp ~/.dotfiles/.fonts/icomoon/feather.ttf ~/.fonts/icomoon/feather.ttf
+mkdir -p ~/.fonts
+cp -r ~/.dotfiles/.fonts/* ~/.fonts/
