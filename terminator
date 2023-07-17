@@ -1,14 +1,41 @@
 [global_config]
-  title_transmit_bg_color = "#57e389"
-  enabled_plugins = LaunchpadBugURLHandler, LaunchpadCodeURLHandler, APTURLHandler, Logger
+  enabled_plugins = CurrDirOpen, LaunchpadBugURLHandler, LaunchpadCodeURLHandler, APTURLHandler, Logger
 [keybindings]
+  cycle_next = <Primary>Page_Down
+  cycle_prev = <Primary><Shift>Page_Down
+  copy = <Primary><Shift>c
+  toggle_scrollbar = ""
+  move_tab_right = ""
+  move_tab_left = ""
+  next_tab = <Primary>Tab
+  prev_tab = <Primary><Shift>Tab
+  edit_tab_title = <Primary><Shift>s
 [profiles]
   [[default]]
-    background_color = "#0f0f0f"
+    background_color = "#282c34"
     background_darkness = 0.9
     background_type = transparent
-    cursor_color = "#aaaaaa"
-    foreground_color = "#f6f5f4"
+    font = CaskaydiaCove Nerd Font Propo 10
+    foreground_color = "#ffffff"
+    palette = "#282c34:#e06c75:#98c379:#e5c07b:#61afef:#c678dd:#56b6c2:#979eab:#abb2bf:#d19a66:#56b6c2:#e5c07b:#61afef:#c678dd:#56b6c2:#abb2bf"
+    use_system_font = False
+    title_transmit_fg_color = "#282c34"
+    title_transmit_bg_color = "#51afef"
+    title_use_system_font = False
+    title_font = CaskaydiaCove Nerd Font Propo 11
+  [[onedark theme]]
+    background_color = "#282c34"
+    background_darkness = 0.9
+    background_type = transparent
+    font = CaskaydiaCove Nerd Font 10
+    foreground_color = "#ffffff"
+    scrollback_infinite = True
+    palette = "#282c34:#e06c75:#98c379:#e5c07b:#61afef:#c678dd:#56b6c2:#979eab:#abb2bf:#d19a66:#56b6c2:#e5c07b:#61afef:#c678dd:#56b6c2:#abb2bf"
+    use_system_font = False
+    title_transmit_fg_color = "#282c34"
+    title_transmit_bg_color = "#61afef"
+    title_use_system_font = False
+    title_font = CaskaydiaCove Nerd Font Mono 9
 [layouts]
   [[default]]
     [[[window0]]]
@@ -17,4 +44,5 @@
     [[[child1]]]
       type = Terminal
       parent = window0
+      profile = onedark theme
 [plugins]
