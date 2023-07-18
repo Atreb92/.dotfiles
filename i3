@@ -43,6 +43,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
+#exec --no-startup-id export TERMINAL=/usr/bin/kitty
 #bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Return exec kitty
 
