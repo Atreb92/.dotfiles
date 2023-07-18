@@ -26,7 +26,7 @@ font pango:CaskaydiaCove Nerd Font,CaskaydiaCove NF 13
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- /home/kali/lock.sh --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- /home/kali/.dotfiles/scripts/lock.sh --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -233,4 +233,4 @@ gaps inner 10
 smart_gaps on
 
 # Alternating layout on i3
-exec --no-startup-id /home/kali/.dotfiles/scripts/alternating_layouts.py
+#exec --no-startup-id /home/kali/.dotfiles/scripts/alternating_layouts.py

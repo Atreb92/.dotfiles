@@ -203,6 +203,22 @@ fi
 alias androidbrowser='adb shell am start -a android.intent.action.VIEW -d'
 alias androidscreenshot='adb exec-out screencap -p > /mnt/hgfs/share/Mobile/$(date +%s).png'
 alias androidcast='adb exec-out screenrecord --output-format=h264 - | ffplay -framerate 60 -probesize 32 -sync video -'
+
+# Nmap
+alias nmap_fast_udp='mkdir -p nmap;sudo nmap -sU --top-ports 20 -oA nmap/udp_top20 -v --script=*enum'
+alias nmap_full_udp='mkdir -p nmap;sudo nmap -sU -p- -oA nmap/udp_full -v --script=*enum'
+alias nmap_full='mkdir -p nmap;sudo nmap -sCV -oA nmap/tcp_full --min-rate 10000 -p- -v'
+alias nmap_fast='mkdir -p nmap;sudo nmap -sCV -oA nmap/tcp_top1000 -v'
+alias nmap_smb='mkdir -p nmap;sudo nmap --script=smb-vuln* -p 139,445 -v -oA nmap/smb_vuln'
+#alias gobuster_files='gobuster dir -w /usr/share/seclists/Discovery/Web-Content/raft-small-files-lowercase.txt  -t 60 -o files'
+#alias gobuster_ext='gobuster dir -w /usr/share/seclists/Discovery/Web-Content/raft-small-words-lowercase.txt  -t 60 -o extension'
+alias ..='cd ..'
+alias openvault='/usr/bin/gocryptfs /home/kali/MEGA/vault /home/kali/vault'
+# Gobuster
+alias gobuster_dir='mkdir -p gobuster;gobuster dir -w /usr/share/seclists/Discovery/Web-Content/raft-small-directories-lowercase.txt'
+alias alias-list='grep "^alias" .zshrc | sed "s/alias //"'
+
+# Pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 if command -v pyenv 1>/dev/null 2>&1; then
@@ -211,7 +227,7 @@ fi
 source ~/.dotfiles/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# old  # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 export TERMINAL=kitty
 
