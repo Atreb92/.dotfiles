@@ -218,9 +218,15 @@ alias openvault='/usr/bin/gocryptfs /home/kali/MEGA/vault /home/kali/vault'
 alias gobuster_dir='mkdir -p gobuster;gobuster dir -w /usr/share/seclists/Discovery/Web-Content/raft-small-directories-lowercase.txt'
 alias alias-list='grep "^alias" .zshrc | sed "s/alias //"'
 
+alias postman='flatpak run com.getpostman.Postman'
+alias google-chrome='flatpak run com.google.Chrome'
+alias microsoft-edge='flatpak run com.microsoft.Edge'
+alias apt-proxy='sudo http_proxy="http://172.0.16.100:8888" apt'
+alias wget-proxy='wget -e use_proxy=yes -e http_proxy=172.0.16.100:8888 -e https_proxy=172.0.16.100:8888'
+
 # Pyenv
 export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
+export PATH="$PYENV_ROOT/bin:/home/kali/.local/bin:$PATH"
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
@@ -233,3 +239,5 @@ export TERMINAL=kitty
 
 # To customize prompt, run `p10k configure` or edit ~/.dotfiles/p10k.zsh.
 [[ ! -f ~/.dotfiles/p10k.zsh ]] || source ~/.dotfiles/p10k.zsh
+alias guiscrcpy='flatpak run in.srev.guiscrcpy'
+alias chromium='flatpak run org.chromium.Chromium'

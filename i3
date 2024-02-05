@@ -43,9 +43,10 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-#exec --no-startup-id export TERMINAL=/usr/bin/kitty
-#bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec kitty
+exec --no-startup-id export TERMINAL=/usr/bin/terminator
+bindsym $mod+Return exec i3-sensible-terminal
+#bindsym $mod+Return exec kitty
+
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -173,7 +174,7 @@ bindsym $mod+shift+d exec --no-startup-id "flameshot screen -c"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 exec --no-startup-id /bin/bash ~/.dotfiles/scripts/wallpaper.sh
-#exec --no-startup-id /usr/bin/vmware-user-suid-wrapper
+exec --no-startup-id /usr/bin/vmware-user-suid-wrapper
 
 # class                 border  bground text    indicator child_border
 #client.focused          #1E1C11 #EEEEEE #1E1C11 #2E9EF4   #285577
@@ -232,6 +233,10 @@ bindsym $mod+Shift+e exec --no-startup-id ~/.dotfiles/rofi/powermenu/type-1/powe
 default_border pixel 0
 gaps inner 10
 smart_gaps on
+
+bindsym $mod+plus exec --no-startup-id nmcli con up id VPS
+bindsym $mod+minus exec --no-startup-id nmcli con down id VPS
+
 
 # Alternating layout on i3
 #exec --no-startup-id /home/kali/.dotfiles/scripts/alternating_layouts.py
